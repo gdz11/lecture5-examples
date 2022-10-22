@@ -1,0 +1,10 @@
+<form >
+<label for="name">Name: </label>
+<input name="name" required [(ngModel)]="student.name" #n="ngModel" />
+<div *ngIf="!n.valid" class="error">This field is required</div>
+<br />
+<label for="name">City: </label>
+<input name="city" [(ngModel)]="student.address.city" />
+</form>
+
+{{ student | json }}

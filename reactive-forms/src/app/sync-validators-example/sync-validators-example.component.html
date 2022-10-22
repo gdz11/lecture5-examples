@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+    <label for="name">Name: </label>
+    <input formControlName="name"  id="name" />
+    <div *ngIf="name.invalid && (name.touched || name.dirty)">
+        <div *ngIf="name.errors?.['required']" class="error">This field is required</div>
+    </div>
+    <label for="lastname">Last name: </label>
+    <input formControlName="lastname" id="lastname">
+    <div *ngIf="lastname.invalid && (lastname.touched || lastname.dirty)">
+        <span *ngIf="lastname.errors?.['required']">This field is required</span>
+        <span *ngIf="lastname.errors?.['minlength']">Minimum 2 characters required</span>
+    </div>
+</form>
